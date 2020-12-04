@@ -39,6 +39,14 @@ while :; do
            then
                mkdir miniatures
            fi
+           if [ ! -e "css" ]
+           then
+               mkdir css
+           fi
+           if [ ! -e "img" ]
+           then
+               mkdir img
+           fi
            echo '<!DOCTYPE html>
            <html lang="en">
            <head>
@@ -46,7 +54,9 @@ while :; do
            <meta name="viewport" content="width=device-width, initial-scale=1.0">
            <title>Miniatures</title>
            </head>
-           <body>' > "miniatures.html"
+           <link rel="stylesheet" href="css/style.css">
+           <body>
+           <div>' > "miniatures.html"
            for I in *.{jpg,png,jpeg,gif}
            do
            if [ -e "$I" ]
@@ -56,8 +66,25 @@ while :; do
                echo "<a href='"$I"'><img src=\"miniatures/$I\" alt=""></a>" >> "miniatures.html"
            fi
            done
-           echo "</body>
-           </html>" >> "miniatures.html";;
+           echo "</div></body>
+           </html>" >> "miniatures.html"
+           echo "body {
+                background: url('../img/gallery.jpg');
+                background-repeat: no-repeat;
+                background-size: 100%;
+           }
+           img {
+               margin-right: 100px;
+           }
+           img:nth-of-type(1) {
+               margin-left: 100px;
+           }
+           div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+           }" > "css/style.css";;
         q | Q) break;;
         *) echo "Saisie erronée, veuillez choisir parmi les caractères de la liste";;
     esac # Fin de case
