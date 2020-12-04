@@ -3,7 +3,7 @@
 # Script : Galerie
 # Description : Génération de miniatures à partir de ces derniers et un fichier HTML présentant toutes les images du dossier. 
 #
-# Date : 20/11/2020
+# Date : 04/12/2020
 # Version : 1.0
 # Auteur : Alexandre PINTRAND (CFPTi)
 #****
