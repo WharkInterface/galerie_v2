@@ -27,6 +27,7 @@ while :; do
     echo " Menu Principal"
     echo "---------------------------"
     echo " 1 - Convertir les images en miniature"
+    echo " 2 - Aide"
     echo " Q - Quitter"
     echo "---------------------------"
     # Demande de saisie à l'utilisateur
@@ -85,6 +86,11 @@ while :; do
                 align-items: center;
                 height: 100vh;
            }" > "css/style.css";;
+        2) clear
+           echo "Menu Aide"
+           echo "---------------------------"
+           echo "Le script 'galerie.sh' est un programme qui permet de générer des miniatures à partir d'images qui ont étaient sauvegardé dans un dossier. Le script génère aussi un fichier HTML qui contient les miniatures. On peut cliquer sur les images pour avoir un aperçu complet de la miniature sur laquelle on clique.";;
+
         q | Q) break;;
         *) echo "Saisie erronée, veuillez choisir parmi les caractères de la liste";;
     esac # Fin de case
